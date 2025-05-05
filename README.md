@@ -13,3 +13,7 @@ Kelas: TIF RP 23 CID B
 
 ## Fitur dan penjelasan
 ### 1. SpashScreen Activity
+![splashscreen](https://github.com/user-attachments/assets/35a7f2fb-e502-4a8d-9a95-f5ebc6edc20a)
+
+- Memunculkan animasi SplashScreen saat aplikasi diluncurkan pertama kali
+- 
