@@ -15,5 +15,36 @@ Kelas: TIF RP 23 CID B
 ### 1. SpashScreen Activity
 ![splashscreen](https://github.com/user-attachments/assets/35a7f2fb-e502-4a8d-9a95-f5ebc6edc20a)
 
-- Memunculkan animasi SplashScreen saat aplikasi diluncurkan pertama kali
-- 
+#### Menampilkan animasi SplashScreen saat aplikasi diluncurkan pertama kali sebelum beralih ke ```activity_main.xml``` (Pilihan untuk Login dan register)
+- Durasi tampilan: 3 detik
+- Implemenasi:
+```kotlin
+package com.hoshirodesu.aplikasichatmobile
+
+import android.content.Intent
+import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
+
+class SplashScreenActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_splash_screen)
+
+        // Delay 3 detik, kemudian buka MAin_activity
+        Handler(Looper.getMainLooper()).postDelayed({
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }, 3000)
+    }
+}
+```
+
+### 2. Login Activity
+<img src="https://github.com/user-attachments/assets/e5e6552b-bf65-42c6-b553-8220f2a113eb" alt="login" width="340" height="800">
+
+#### Form autentikasi pengguna menggunakan email dan password
+- ```EditText```: untuk input email dan password
+- ```login_button```: untuk mengecek validasi pada akun yang telah di register dan jika form-nya kosong
+- Implementasi:
