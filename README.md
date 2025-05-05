@@ -16,7 +16,7 @@ Kelas: TIF RP 23 CID B
 ![splashscreen](https://github.com/user-attachments/assets/35a7f2fb-e502-4a8d-9a95-f5ebc6edc20a)
 
 #### Menampilkan animasi SplashScreen saat aplikasi diluncurkan pertama kali sebelum beralih ke ```activity_main.xml``` (Pilihan untuk Login dan register)
-- Durasi tampilan: 3 detik
+- Durasi tampilan: 1 detik
 - Implemenasi:
 ```kotlin
 package com.hoshirodesu.aplikasichatmobile
@@ -36,7 +36,7 @@ class SplashScreenActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }, 3000)
+        }, 1000)
     }
 }
 ```
