@@ -1,4 +1,3 @@
-
 ```
 Nama: Mochammad Raffi Fadhillah
 NPM: 23552011066
@@ -42,7 +41,7 @@ class SplashScreenActivity : AppCompatActivity() {
 ```
 
 ### 2. Login Activity
-<img src="https://github.com/user-attachments/assets/e5e6552b-bf65-42c6-b553-8220f2a113eb" alt="login" width="340" height="800">
+<img src="https://github.com/user-attachments/assets/e5e6552b-bf65-42c6-b553-8220f2a113eb" alt="login" width="340" height="840">
 
 #### Form autentikasi pengguna menggunakan email dan password
 - ```EditText```: untuk input email dan password
