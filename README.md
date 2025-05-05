@@ -34,7 +34,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         // Delay 3 detik, kemudian buka MAin_activity
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }, 3000)
     }
