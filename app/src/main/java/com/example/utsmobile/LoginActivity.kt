@@ -39,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
             val email = binding.editLoginEmail.text.toString()
             val password = binding.editLoginPassword.text.toString()
 
+            // Cek apakah field kosong
             if (email.isNotEmpty() && password.isNotEmpty()) {
                     firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                         if (it.isSuccessful) {
@@ -46,13 +47,16 @@ class LoginActivity : AppCompatActivity() {
                             startActivity(intent)
                             Toast.makeText(this, "Selamat datang, $email", Toast.LENGTH_SHORT).show()
                         } else {
+                            // tampilkan pesan jika input email dan password salah
                             Toast.makeText(this, "Email atau password salah. Silakan coba lagi.", Toast.LENGTH_SHORT).show()
                         }
                     }
             } else {
+                // tampilkan pesan jika input email dan password tidak diisi
                 Toast.makeText(this, "Semua field harus diisi", Toast.LENGTH_SHORT).show()
             }
         }
+        // Fungsi untuk tombol kembali ke activity_main
         val backButton: ImageView = findViewById(R.id.btn_loginBack)
         backButton.setOnClickListener {
             finish()

@@ -21,8 +21,8 @@ import com.google.firebase.database.FirebaseDatabase
 
 class RegisterActivity : AppCompatActivity() {
 
-    lateinit var binding : ActivityRegisterBinding
-    lateinit var firebaseAuth : FirebaseAuth
+    lateinit var binding: ActivityRegisterBinding
+    lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -40,22 +40,29 @@ class RegisterActivity : AppCompatActivity() {
             val email = binding.editEmail.text.toString()
             val password = binding.editPassword.text.toString()
             val confirmPassword = binding.editConfirmpassword.text.toString()
-
+            // Cek apakah field kosong
             if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
                 if (password == confirmPassword) {
-                    firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
-                        if (it.isSuccessful) {
-                            val intent = Intent(this, LoginActivity::class.java)
-                            startActivity(intent)
-                            Toast.makeText(this, "Registrasi berhasil", Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(this, "Email sudah terdaftar", Toast.LENGTH_SHORT).show()
+                    firebaseAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                val intent = Intent(this, LoginActivity::class.java)
+                                startActivity(intent)
+                                // tampilkan pesan jika registrasi berhasil
+                                Toast.makeText(this, "Registrasi berhasil", Toast.LENGTH_SHORT)
+                                    .show()
+                            } else {
+                                // tampilkan pesan jika email telah terdaftar
+                                Toast.makeText(this, "Email sudah terdaftar", Toast.LENGTH_SHORT)
+                                    .show()
+                            }
                         }
-                    }
                 } else {
+                    // tampilkan pesan jika password tidak sesuai
                     Toast.makeText(this, "Password tidak sesuai", Toast.LENGTH_SHORT).show()
                 }
             } else {
+                // tampilkan pesan jika semua field harus diisi
                 Toast.makeText(this, "Semua field harus diisi", Toast.LENGTH_SHORT).show()
             }
         }

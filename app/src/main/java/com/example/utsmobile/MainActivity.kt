@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
         }
 
-            registerButton.setOnClickListener {
-                startActivity(Intent(this, RegisterActivity::class.java))
-            }
+        registerButton.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
