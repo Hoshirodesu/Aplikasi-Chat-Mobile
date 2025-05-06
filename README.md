@@ -215,7 +215,7 @@ class RegisterActivity : AppCompatActivity() {
 ### 4. List Chating
 <img src="https://github.com/user-attachments/assets/03ac7bf4-793d-467e-8895-eb25fd8b5a16" alt="home" width="340" height="760">
 
-Menampilkan daftar percakapan menggunakan ```RecyclerView``` dengan GridLayoutManager, dan memanfaatkan Glide untuk memuat gambar avatar
+#### Menampilkan daftar percakapan menggunakan ```RecyclerView``` dengan GridLayoutManager, dan memanfaatkan Glide untuk memuat gambar avatar
 -  Berisi list objek Chat berisi nama kontak dan pesan terakhir
 -  Implementasi HomeActivity.kt:
 ```kotlin
