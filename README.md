@@ -4,6 +4,9 @@ NPM: 23552011066
 Kelas: TIF RP 23 CID B
 ```
 # Aplikasi Chat mobile
+![splashscreen](https://github.com/user-attachments/assets/9a2dfcf0-6aff-46aa-834b-c91c73ba2a55) | ![mainActivity](https://github.com/user-attachments/assets/4f732193-f148-41ae-8241-ebed65744026) | ![login](https://github.com/user-attachments/assets/3f1310b9-e5b3-41e4-bbf8-b4547dad84ea) | ![register](https://github.com/user-attachments/assets/bc1df954-295d-4bb7-ae9f-a98325aa6bf5) | ![home](https://github.com/user-attachments/assets/a7793e32-b61a-43c3-84eb-9e6e3558e8ae)
+|:-------------------------------:|:-------------------------------:|:-------------------------------:|:-------------------------------:|:-------------------------------:|
+
 ### Aplikasi ini dikembangkan menggunakan android (kotlin) dan mengimplementasikan 4 jenis activity yang terdiri dari:
 1. SplashScreen Activity
 2. Login Activity
@@ -244,6 +247,7 @@ class HomeActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Chat"
+        // mengganti warna toolbar menu menjadi warna putih
         toolbar.overflowIcon?.let { drawable ->
             val wrapped = DrawableCompat.wrap(drawable)
             DrawableCompat.setTint(wrapped.mutate(), Color.WHITE)
