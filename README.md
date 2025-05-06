@@ -379,17 +379,16 @@ data class ItemList (
 ```
 
 ## Library yang digunakan:
-### 1. Lottiefiles
-Untuk membuat animasi Splash screen
-### 2. Firebase
-Untuk operasi autentikasi login dan register dan menyimpan datanya di server
-### 3. Glide
-Untuk memuat gambar (imageUrl) lebih cepat dan efisien
-### 4. Material Components for Android
-Untuk implementasi komponen UI dari Material Design
+| Library      | Fungsi |
+| --------------- | ------ |
+| Lottiefiles      | Untuk membuat animasi Splash screen   |
+| Firebase         | Untuk operasi autentikasi login dan register dan menyimpan datanya di server   |
+| Glide        | Untuk memuat gambar (imageUrl) lebih cepat dan efisien  |
+| Material Components for Android        | Untuk implementasi komponen UI dari Material Design   |
 
 ## Tools yang digunakan:
-### 1. Figma
-Untuk membuat desain/mockup UI aplikasi yang dibuat
-### 2. Android Studio
-IDE untuk mengembangkan aplikasi android
+| Tools      | Fungsi |
+| --------------- | ------ |
+| Figma     | Untuk membuat desain/mockup UI aplikasi yang dibuat   |
+| Android Studio         | IDE untuk mengembangkan aplikasi android   |
+
