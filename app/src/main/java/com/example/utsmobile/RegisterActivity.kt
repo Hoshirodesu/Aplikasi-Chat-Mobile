@@ -3,6 +3,7 @@ package com.example.utsmobile
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.widget.Button
@@ -33,6 +34,7 @@ class RegisterActivity : AppCompatActivity() {
 
         // Ketika teks “Login” diklik, user akan dipindahkan ke LoginActivity
         binding.txtLogin.setOnClickListener {
+            Log.d("LoginActivity", "setOnClickListener: berhasil ke menu Login")
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
@@ -52,26 +54,31 @@ class RegisterActivity : AppCompatActivity() {
                                 val intent = Intent(this, LoginActivity::class.java)
                                 startActivity(intent)
                                 // tampilkan pesan toast jika registrasi berhasil
+                                Log.d("RegisterActivity", "setOnClickListener: register berhasil")
                                 Toast.makeText(this, "Registrasi berhasil", Toast.LENGTH_SHORT)
                                     .show()
                             } else {
                                 // tampilkan pesan toast jika email telah terdaftar
+                                Log.d("RegisterActivity", "setOnClickListener: Email sudah terdaftar")
                                 Toast.makeText(this, "Email sudah terdaftar", Toast.LENGTH_SHORT)
                                     .show()
                             }
                         }
                 } else {
                     // tampilkan pesan toast jika password tidak sesuai
+                    Log.d("RegisterActivity", "setOnClickListener: Password tidak sesuai")
                     Toast.makeText(this, "Password tidak sesuai", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 // tampilkan pesan toast jika semua field harus diisi
+                Log.d("RegisterActivity", "setOnClickListener: Semua field harus diisi")
                 Toast.makeText(this, "Semua field harus diisi", Toast.LENGTH_SHORT).show()
             }
         }
         // Tombol kembali ke main_activity
         val backButton: ImageView = findViewById(R.id.btn_registerBack)
         backButton.setOnClickListener {
+            Log.d("RegisterActivity", "setOnClickListener: Berhasil kembali ke MainActivity")
             finish()
         }
 

@@ -3,6 +3,7 @@ package com.example.utsmobile
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -32,6 +33,7 @@ class HomeActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Chat"
+        // mengganti warna toolbar menu menjadi warna putih
         toolbar.overflowIcon?.let { drawable ->
             val wrapped = DrawableCompat.wrap(drawable)
             DrawableCompat.setTint(wrapped.mutate(), Color.WHITE)
@@ -41,7 +43,8 @@ class HomeActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager = GridLayoutManager(this, 1) // Mengatur RecyclerView menampilkan item dalam satu kolom
         recyclerView.setHasFixedSize(true) // Memberi tahu bahwa ukuran RecyclerView tidak berubah berdasarkan konten
-        // menyimpan daftar itemList yang berisi objek ItemList (judul, subJudul, iamgeUrl)
+
+        // menyimpan daftar itemList yang berisi objek ItemList (judul, subJudul, imageUrl)
         val itemList = listOf(
             ItemList("Vivian Banshee", "Lorem ipsum dolor sit amet",
                 "https://static.wikia.nocookie.net/zenless-zone-zero/images/3/31/Avatar_Vivian_Banshee.png/revision/latest?cb=20250423022832"),
@@ -89,9 +92,11 @@ class HomeActivity : AppCompatActivity() {
             .setPositiveButton("Ya") { dialog, _ ->
                 dialog.dismiss()
                 performLogout()
+                Log.d("HomeActivity", "AlertDialog: logout berhasil")
             }
             .setNegativeButton("Tidak") { dialog, _ ->
                 dialog.dismiss()
+                Log.d("HomeActivity", "AlertDialog: batal logout")
             }
             .setCancelable(true)
             .show()
@@ -105,5 +110,6 @@ class HomeActivity : AppCompatActivity() {
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
         finish()
+        Log.d("HomeActivity", "performLogout: Kembali ke LoginActivity")
     }
 }

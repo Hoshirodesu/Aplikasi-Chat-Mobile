@@ -2,6 +2,7 @@ package com.example.utsmobile
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,10 +21,12 @@ class MainActivity : AppCompatActivity() {
         // Tombol untuk ke activity_login
         loginButton.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
+            Log.d("mainActivity", "setOnClickListener: Berhasil ke menu Login")
         }
         // Tombol untuk ke activity_register
         registerButton.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
+            Log.d("mainActivity", "setOnClickListener: Berhasil ke menu Register")
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
