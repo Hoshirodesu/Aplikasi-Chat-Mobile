@@ -21,52 +21,55 @@ import com.google.firebase.database.FirebaseDatabase
 
 class RegisterActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityRegisterBinding
-    lateinit var firebaseAuth: FirebaseAuth
+    lateinit var binding: ActivityRegisterBinding // inisialisasi activity_register
+    lateinit var firebaseAuth: FirebaseAuth // inisialisasi firebase authentication
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Mendapatkan instance Firebase Authentication untuk operasi pendaftaran.
         firebaseAuth = FirebaseAuth.getInstance()
 
+        // Ketika teks “Login” diklik, user akan dipindahkan ke LoginActivity
         binding.txtLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
         binding.btnRegister.setOnClickListener {
+            // Mengambil Input dari EditText
             val email = binding.editEmail.text.toString()
             val password = binding.editPassword.text.toString()
             val confirmPassword = binding.editConfirmpassword.text.toString()
             // Cek apakah field kosong
             if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
                 if (password == confirmPassword) {
+                    // memanggil firebase untuk membuat akun
                     firebaseAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener {
                             if (it.isSuccessful) {
                                 val intent = Intent(this, LoginActivity::class.java)
                                 startActivity(intent)
-                                // tampilkan pesan jika registrasi berhasil
+                                // tampilkan pesan toast jika registrasi berhasil
                                 Toast.makeText(this, "Registrasi berhasil", Toast.LENGTH_SHORT)
                                     .show()
                             } else {
-                                // tampilkan pesan jika email telah terdaftar
+                                // tampilkan pesan toast jika email telah terdaftar
                                 Toast.makeText(this, "Email sudah terdaftar", Toast.LENGTH_SHORT)
                                     .show()
                             }
                         }
                 } else {
-                    // tampilkan pesan jika password tidak sesuai
+                    // tampilkan pesan toast jika password tidak sesuai
                     Toast.makeText(this, "Password tidak sesuai", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                // tampilkan pesan jika semua field harus diisi
+                // tampilkan pesan toast jika semua field harus diisi
                 Toast.makeText(this, "Semua field harus diisi", Toast.LENGTH_SHORT).show()
             }
         }
-
+        // Tombol kembali ke main_activity
         val backButton: ImageView = findViewById(R.id.btn_registerBack)
         backButton.setOnClickListener {
             finish()

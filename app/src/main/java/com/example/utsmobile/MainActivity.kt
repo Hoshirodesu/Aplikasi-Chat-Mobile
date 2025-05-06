@@ -14,13 +14,14 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val loginButton: Button = findViewById(R.id.login_button)
-        val registerButton: Button = findViewById(R.id.register_button)
+        val loginButton: Button = findViewById(R.id.login_button) // Mengambil Input dari button
+        val registerButton: Button = findViewById(R.id.register_button) // Mengambil Input dari button
 
+        // Tombol untuk ke activity_login
         loginButton.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
-
+        // Tombol untuk ke activity_register
         registerButton.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }

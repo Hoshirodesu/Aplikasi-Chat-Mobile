@@ -31,7 +31,6 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Chat"
         toolbar.overflowIcon?.let { drawable ->
             val wrapped = DrawableCompat.wrap(drawable)
@@ -40,8 +39,9 @@ class HomeActivity : AppCompatActivity() {
         }
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-        recyclerView.layoutManager = GridLayoutManager(this, 1)
-        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = GridLayoutManager(this, 1) // Mengatur RecyclerView menampilkan item dalam satu kolom
+        recyclerView.setHasFixedSize(true) // Memberi tahu bahwa ukuran RecyclerView tidak berubah berdasarkan konten
+        // menyimpan daftar itemList yang berisi objek ItemList (judul, subJudul, iamgeUrl)
         val itemList = listOf(
             ItemList("Vivian Banshee", "Lorem ipsum dolor sit amet",
                 "https://static.wikia.nocookie.net/zenless-zone-zero/images/3/31/Avatar_Vivian_Banshee.png/revision/latest?cb=20250423022832"),
@@ -61,11 +61,11 @@ class HomeActivity : AppCompatActivity() {
                 "https://static.wikia.nocookie.net/zenless-zone-zero/images/2/21/Avatar_Ellen_Joe.png/revision/latest?cb=20241117203511"),
 
         )
-
         val adapter = AdapterList(itemList)
         recyclerView.adapter = adapter
     }
 
+    // Menu Toolbar (Logout)
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         // Inflate menu_main.xml ke dalam toolbar
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -81,7 +81,7 @@ class HomeActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
+    // AlertDialog Konfirmasi Logout
     private fun showLogoutConfirmation() {
         AlertDialog.Builder(this)
             .setTitle("Konfirmasi Logout")
@@ -97,7 +97,7 @@ class HomeActivity : AppCompatActivity() {
             .show()
     }
 
-
+    // Proses Logout
     private fun performLogout() {
         FirebaseAuth.getInstance().signOut()
         // Kembali ke LoginActivity

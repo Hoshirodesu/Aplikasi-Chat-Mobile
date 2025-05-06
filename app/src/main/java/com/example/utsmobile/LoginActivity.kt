@@ -22,41 +22,47 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class LoginActivity : AppCompatActivity() {
-    lateinit var binding : ActivityLoginBinding
-    lateinit var firebaseAuth: FirebaseAuth
+    lateinit var binding : ActivityLoginBinding // inisialisasi activity_login
+    lateinit var firebaseAuth: FirebaseAuth // inisialisasi firebase authentication
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Mendapatkan instance Firebase Authentication untuk operasi pendaftaran.
         firebaseAuth = FirebaseAuth.getInstance()
+
+        // Ketika teks “Register” diklik, user akan dipindahkan ke RegisterActivity
         binding.txtRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 
         binding.btnLogin.setOnClickListener {
+            // Mengambil Input dari EditText
             val email = binding.editLoginEmail.text.toString()
             val password = binding.editLoginPassword.text.toString()
 
             // Cek apakah field kosong
             if (email.isNotEmpty() && password.isNotEmpty()) {
+                    // memanggil firebase untuk Login dengan email dan password
                     firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                         if (it.isSuccessful) {
                             val intent = Intent(this, HomeActivity::class.java)
                             startActivity(intent)
+                            // tampilkan pesan toast jika login berhasil
                             Toast.makeText(this, "Selamat datang, $email", Toast.LENGTH_SHORT).show()
                         } else {
-                            // tampilkan pesan jika input email dan password salah
+                            // tampilkan pesan toast jika input email dan password salah
                             Toast.makeText(this, "Email atau password salah. Silakan coba lagi.", Toast.LENGTH_SHORT).show()
                         }
                     }
             } else {
-                // tampilkan pesan jika input email dan password tidak diisi
+                // tampilkan pesan toast jika input email dan password tidak diisi
                 Toast.makeText(this, "Semua field harus diisi", Toast.LENGTH_SHORT).show()
             }
         }
-        // Fungsi untuk tombol kembali ke activity_main
+        // Tombol kembali untuk ke main_activity
         val backButton: ImageView = findViewById(R.id.btn_loginBack)
         backButton.setOnClickListener {
             finish()
