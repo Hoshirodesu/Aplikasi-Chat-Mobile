@@ -375,11 +375,17 @@ data class ItemList (
 ```
 
 ## Library yang digunakan:
-1. Flottiefiles
-2. Firebase
-3. Glide
-4. Material Components for Android
+#### 1. Flottiefiles
+Untuk membuat animasi Splash screen
+### 2. Firebase
+Untuk operasi autentikasi login dan register dan menyimpan datanya di server
+### 3. Glide
+Untuk memuat gambar (imageUrl) lebih cepat dan efisien
+### 4. Material Components for Android
+Untuk implementasi komponen UI dari Material Design
 
 ## Tools yang digunakan:
-1. Figma
-2. Android Studio
+### 1. Figma
+Untuk membuat desain/mockup UI aplikasi yang dibuat
+### 2. Android Studio
+IDE untuk mengembangkan aplikasi android
