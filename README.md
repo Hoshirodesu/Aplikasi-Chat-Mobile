@@ -375,7 +375,7 @@ data class ItemList (
 ```
 
 ## Library yang digunakan:
-#### 1. Flottiefiles
+### 1. Flottiefiles
 Untuk membuat animasi Splash screen
 ### 2. Firebase
 Untuk operasi autentikasi login dan register dan menyimpan datanya di server
