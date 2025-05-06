@@ -46,4 +46,3 @@ class SplashScreenActivity : AppCompatActivity() {
 #### Form autentikasi pengguna menggunakan email dan password
 - ```EditText```: untuk input email dan password
 - ```login_button```: untuk mengecek validasi pada akun yang telah di register dan jika form-nya kosong
-- Implementasi:
