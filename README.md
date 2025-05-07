@@ -138,7 +138,25 @@ class LoginActivity : AppCompatActivity() {
 
 #### Form pendaftaran untuk akun baru dengan Email, Password, dan ConfirmPassword
 - semua textfield wajib diisi termasuk Email, Password, dan ConfirmPassword
-- Jika sudah register akan langsung masuk ke LoginActivity
+- Event log:
+```kotlin
+2025-05-07 21:27:49.935 25252-25252 RegisterActivity        com.example.utsmobile                D  setOnClickListener: Semua field harus diisi
+```
+- Jika password tidak sesuai maka akan muncul toast “password tidak sesuai”
+- Event log:
+```kotlin
+2025-05-07 21:41:02.024 28927-28927 RegisterActivity        com.example.utsmobile                D  setOnClickListener: Password tidak sesuai
+```
+- Jika email sudah terdaftar maka akan mucul toast “email sudah terdaftar”
+- Event log:
+```kotlin
+2025-05-07 21:50:08.614 28927-28927 RegisterActivity        com.example.utsmobile                D  setOnClickListener: Email sudah terdaftar
+```
+- Jika sudah register akan langsung masuk ke LoginActivity, lalu muncul pesan toast “registrasi berhasil”
+- Event log:
+```kotlin
+2025-05-07 21:45:49.144 28927-28927 RegisterActivity        com.example.utsmobile                D  setOnClickListener: register berhasil
+```
 - Data yang sudah di register akan disimpan di firebase server
 - Di bagian RegisterActivity terdapat beberapa objek yaitu TextView, EditText, Button, dan ImageView
 - Implementasi RegisterActivity:
