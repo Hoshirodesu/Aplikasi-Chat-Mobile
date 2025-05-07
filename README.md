@@ -61,9 +61,9 @@ class SplashActivity : AppCompatActivity() {
 ```kotlin
 package com.example.utsmobile
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -71,6 +71,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.utsmobile.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
+
 class LoginActivity : AppCompatActivity() {
     lateinit var binding : ActivityLoginBinding // inisialisasi activity_login
     lateinit var firebaseAuth: FirebaseAuth // inisialisasi firebase authentication
@@ -84,6 +85,7 @@ class LoginActivity : AppCompatActivity() {
 
         // Ketika teks “Register” diklik, user akan dipindahkan ke RegisterActivity
         binding.txtRegister.setOnClickListener {
+            Log.d("LoginActivity", "setOnClickListener: berhasil ke menu Register")
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
@@ -101,20 +103,24 @@ class LoginActivity : AppCompatActivity() {
                             val intent = Intent(this, HomeActivity::class.java)
                             startActivity(intent)
                             // tampilkan pesan toast jika login berhasil
+                            Log.d("LoginActivity", "setOnClickListener: Login berhasil")
                             Toast.makeText(this, "Selamat datang, $email", Toast.LENGTH_SHORT).show()
                         } else {
                             // tampilkan pesan toast jika input email dan password salah
+                            Log.d("LoginActivity", "setOnClickListener: Email atau password salah")
                             Toast.makeText(this, "Email atau password salah. Silakan coba lagi.", Toast.LENGTH_SHORT).show()
                         }
                     }
             } else {
                 // tampilkan pesan toast jika input email dan password tidak diisi
+                Log.d("LoginActivity", "setOnClickListener: Semua field harus diisi")
                 Toast.makeText(this, "Semua field harus diisi", Toast.LENGTH_SHORT).show()
             }
         }
         // Tombol kembali untuk ke main_activity
         val backButton: ImageView = findViewById(R.id.btn_loginBack)
         backButton.setOnClickListener {
+            Log.d("LoginActivity", "setOnClickListener: Berhasil kembali ke MainActivity")
             finish()
         }
 
@@ -139,9 +145,9 @@ class LoginActivity : AppCompatActivity() {
 ```kotlin 
 package com.example.utsmobile
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -164,6 +170,7 @@ class RegisterActivity : AppCompatActivity() {
 
         // Ketika teks “Login” diklik, user akan dipindahkan ke LoginActivity
         binding.txtLogin.setOnClickListener {
+            Log.d("LoginActivity", "setOnClickListener: berhasil ke menu Login")
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
@@ -183,26 +190,31 @@ class RegisterActivity : AppCompatActivity() {
                                 val intent = Intent(this, LoginActivity::class.java)
                                 startActivity(intent)
                                 // tampilkan pesan toast jika registrasi berhasil
+                                Log.d("RegisterActivity", "setOnClickListener: register berhasil")
                                 Toast.makeText(this, "Registrasi berhasil", Toast.LENGTH_SHORT)
                                     .show()
                             } else {
                                 // tampilkan pesan toast jika email telah terdaftar
+                                Log.d("RegisterActivity", "setOnClickListener: Email sudah terdaftar")
                                 Toast.makeText(this, "Email sudah terdaftar", Toast.LENGTH_SHORT)
                                     .show()
                             }
                         }
                 } else {
                     // tampilkan pesan toast jika password tidak sesuai
+                    Log.d("RegisterActivity", "setOnClickListener: Password tidak sesuai")
                     Toast.makeText(this, "Password tidak sesuai", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 // tampilkan pesan toast jika semua field harus diisi
+                Log.d("RegisterActivity", "setOnClickListener: Semua field harus diisi")
                 Toast.makeText(this, "Semua field harus diisi", Toast.LENGTH_SHORT).show()
             }
         }
         // Tombol kembali ke main_activity
         val backButton: ImageView = findViewById(R.id.btn_registerBack)
         backButton.setOnClickListener {
+            Log.d("RegisterActivity", "setOnClickListener: Berhasil kembali ke MainActivity")
             finish()
         }
 
