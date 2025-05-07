@@ -127,7 +127,7 @@ class LoginActivity : AppCompatActivity() {
 }
 ```
 
-### 3. RegisterActivity
+### 3. Register Activity
 <img src="https://github.com/user-attachments/assets/1f481481-97ac-4711-a976-6ff68ddbbac4" alt="register" width="340" height="760">
 
 #### Form pendaftaran untuk akun baru dengan Email, Password, dan ConfirmPassword
