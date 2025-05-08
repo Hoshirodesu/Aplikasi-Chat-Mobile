@@ -14,7 +14,7 @@ Kelas: TIF RP 23 CID B
 4. List Chating
 
 ## Fitur dan penjelasan
-### 1. SpashScreen Activity
+### 1. SplashScreen Activity
 ![splashscreen](https://github.com/user-attachments/assets/35a7f2fb-e502-4a8d-9a95-f5ebc6edc20a)
 
 #### Menampilkan animasi SplashScreen saat aplikasi diluncurkan pertama kali sebelum beralih ke ```activity_main.xml``` (Pilihan untuk Login dan register)
