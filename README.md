@@ -144,14 +144,14 @@ class LoginActivity : AppCompatActivity() {
 ```kotlin
 2025-05-07 21:27:49.935 25252-25252 RegisterActivity        com.example.utsmobile                D  setOnClickListener: Semua field harus diisi
 ```
-- Jika password tidak sesuai maka akan muncul toast “password tidak sesuai”
+- Jika password tidak sesuai maka akan muncul pesan toast “password tidak sesuai”
 <img src="https://github.com/user-attachments/assets/2b904cb7-4ab4-445d-832f-012c572ae0db" alt="toast1" width="260" height="100">
 
 - Event log:
 ```kotlin
 2025-05-07 21:41:02.024 28927-28927 RegisterActivity        com.example.utsmobile                D  setOnClickListener: Password tidak sesuai
 ```
-- Jika email sudah terdaftar maka akan mucul toast “email sudah terdaftar”
+- Jika email sudah terdaftar maka akan muncul pesan toast “email sudah terdaftar”
 <img src="https://github.com/user-attachments/assets/508c6224-1cb2-429a-a0c9-9b01834a20d7" alt="toast2" width="260" height="100">
 
 - Event log:
