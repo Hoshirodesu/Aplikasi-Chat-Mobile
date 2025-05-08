@@ -134,25 +134,33 @@ class LoginActivity : AppCompatActivity() {
 ```
 
 ### 3. Register Activity
-<img src="https://github.com/user-attachments/assets/1f481481-97ac-4711-a976-6ff68ddbbac4" alt="register" width="340" height="760">
+<img src="https://github.com/user-attachments/assets/1f481481-97ac-4711-a976-6ff68ddbbac4" alt="login" width="340" height="760">
 
 #### Form pendaftaran untuk akun baru dengan Email, Password, dan ConfirmPassword
 - semua textfield wajib diisi termasuk Email, Password, dan ConfirmPassword
+<img src="https://github.com/user-attachments/assets/8abf9ca5-2ec5-497d-9429-069f47d16ce3" alt="toast" width="260" height="100">
+
 - Event log:
 ```kotlin
 2025-05-07 21:27:49.935 25252-25252 RegisterActivity        com.example.utsmobile                D  setOnClickListener: Semua field harus diisi
 ```
 - Jika password tidak sesuai maka akan muncul toast “password tidak sesuai”
+<img src="https://github.com/user-attachments/assets/2b904cb7-4ab4-445d-832f-012c572ae0db" alt="toast1" width="260" height="100">
+
 - Event log:
 ```kotlin
 2025-05-07 21:41:02.024 28927-28927 RegisterActivity        com.example.utsmobile                D  setOnClickListener: Password tidak sesuai
 ```
 - Jika email sudah terdaftar maka akan mucul toast “email sudah terdaftar”
+<img src="https://github.com/user-attachments/assets/508c6224-1cb2-429a-a0c9-9b01834a20d7" alt="toast2" width="260" height="100">
+
 - Event log:
 ```kotlin
 2025-05-07 21:50:08.614 28927-28927 RegisterActivity        com.example.utsmobile                D  setOnClickListener: Email sudah terdaftar
 ```
 - Jika sudah register akan langsung masuk ke LoginActivity, lalu muncul pesan toast “registrasi berhasil”
+<img src="https://github.com/user-attachments/assets/0755300d-a214-4ba7-95d7-472be20011c4" alt="toast3" width="260" height="100">
+
 - Event log:
 ```kotlin
 2025-05-07 21:45:49.144 28927-28927 RegisterActivity        com.example.utsmobile                D  setOnClickListener: register berhasil
